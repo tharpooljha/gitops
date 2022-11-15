@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gitops-repo
+  namespace: argocd  
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: devops-repo
+  url: https://gitlab.com/fcsf/DevOps.git
+#  password: <path:kv-v2/data/argocd#github_token>  
+  password: fcsf
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: artifactory-helm-repo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: artifactory-helm-repo
+  type: helm
+  url: https://artifactory.banno-tools.com/artifactory/helm-local
+#  password: <path:kv-v2/data/argocd#artifactory_apikey>
+  username: fcsf
+  password: fcsf

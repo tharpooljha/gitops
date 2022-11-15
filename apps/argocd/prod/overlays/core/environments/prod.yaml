@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-config
+  namespace: argocd
+  labels:
+    environment: prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/fcsf/DevOps.git
+    targetRevision: HEAD
+    path: environments/prod/config
+
+
+  destination:
+    name: in-cluster
+    namespace: argocd

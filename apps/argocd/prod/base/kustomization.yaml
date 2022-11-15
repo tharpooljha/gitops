@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argocd
+
+resources:
+- namespace.yaml
+# - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.4.11
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.0/manifests/ha/install.yaml
+# - vault-configuration.yaml
+- repository.yaml
+
+
+patchesStrategicMerge:
+- argocd-secret.yaml
+
+
+
+
+
+

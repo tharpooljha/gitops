@@ -1,0 +1,9 @@
+# You will need the restful api extension in VS code for this to work. 
+#Name: REST Client
+#Id: humao.rest-client
+#Description: REST Client for Visual Studio Code
+# Version: 0.25.1
+# Publisher: Huachao Mao
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+GET https://datausa.io/api/data?drilldowns=Nation&measures=Population HTTP/1.1 content-type: application/json ###/health HTTP/1.1 content-type: application/json

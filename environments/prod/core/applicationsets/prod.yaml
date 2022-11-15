@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name:  appset-dev
+  labels:
+    app.kubernetes.io/name: appset-prod
+    app.kubernetes.io/instance: fcsf
+    app.kubernetes.io/version: "0.1.1"
+    app.kubernetes.io/component: ApplicationSet
+    app.kubernetes.io/part-of: fcsf
+    app.kubernetes.io/managed-by: argocd
+    name: appset-prod
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/fcsf/DevOps.git
+      revision: HEAD
+      directories:
+      - path: apps/prod/*
+  template:
+    metadata:
+      name: '{{path.basename}}-prod'
+    spec:
+      project: prod
+      source:
+        repoURL: https://github.com/fcsf/DevOps.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+  
