@@ -1,5 +1,5 @@
 # DevOps with GitOps
-GitOps rep used to deploy in-cluster services and products to AKS cluster for ECM.
+GitOps rep used to deploy in-cluster services and products to Kubernetes clusters. This is an opinionated file structure on how argocd should be setup.
 
 - Update `apps/argocd/{dev,prod}/argocd-secret.yaml` with base64 with `admin:password`
 - Update `apps/argocd/{dev,prod}/repository.yaml` with gitlab/github api key
