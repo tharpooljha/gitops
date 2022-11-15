@@ -21,7 +21,7 @@ kubectl apply -k argocd/prod
 This will create a kubernetes secret that will allow us to pull docker and helm charts from artifactory into our cluster.
 ```
 kubectl create secret docker-registry regcred \
---docker-server=https://artifactory.banno-tools.com/artifactory \
+--docker-server=https://artifactory \
 --docker-username=read-only \
 --docker-password=artifactory_apikey \
 --docker-email=tharpool@jhacorp.com \
