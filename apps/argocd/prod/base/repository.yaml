@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   name: devops-repo
-  url: https://gitlab.com/fcsf/DevOps.git
+  url: https://github.com/tharpooljha/gitops.git
 #  password: <path:kv-v2/data/argocd#github_token>  
   password: fcsf
 ---
@@ -21,7 +21,7 @@ metadata:
 stringData:
   name: artifactory-helm-repo
   type: helm
-  url: https://artifactory.banno-tools.com/artifactory/helm-local
+  url: https://artifactory
 #  password: <path:kv-v2/data/argocd#artifactory_apikey>
   username: fcsf
   password: fcsf
