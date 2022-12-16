@@ -8,11 +8,11 @@ resources:
 - vault-configuration.yaml
 - repository.yaml
 - argo-role.yaml
-#- cmp-plugin.yaml
+- cmp-plugin.yaml
 
 patchesStrategicMerge:
 - argocd-secret.yaml
-#- argocd-repo-server.yaml
+- argocd-repo-server.yaml
 
 
 
