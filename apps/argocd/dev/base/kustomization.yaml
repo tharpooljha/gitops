@@ -4,14 +4,15 @@ namespace: argocd
 
 resources:
 - namespace.yaml
-# - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.4.11
 - https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.0/manifests/ha/install.yaml
-# - vault-configuration.yaml
+- vault-configuration.yaml
 - repository.yaml
 - argo-role.yaml
+- cmp-plugin.yaml
 
 patchesStrategicMerge:
 - argocd-secret.yaml
+- argocd-repo-server.yaml
 
 
 
